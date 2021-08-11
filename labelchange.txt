@@ -1,0 +1,70 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import os, sys
+def print_hi(name):
+    # Use a breakpoint in the code line below to debug your script.
+    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+
+
+
+def eachfile(path,path2):
+
+    pathdir = os.listdir(path)  # 遍历文件，pathdir为文件名列表
+    print(pathdir)
+    for s in pathdir:  # 文件名
+        #print(s)
+        filenames = os.path.join(path, s)  # 文件名加到后面
+        # filenames = path + '/' + s
+
+        filenames2 = os.path.join(path2, s)
+        # filenames2 = path2 + '/' + s
+
+
+        if os.path.isfile(filenames):
+            if os.path.isfile(filenames2):
+                if filenames2.endswith('.txt'):
+                    os.remove(filenames2)
+            #for i in list:
+                # name = filenames[i]
+                # readfile = open(path)
+            if filenames.endswith('.txt') and 'classes.txt' not in filenames:
+                with open(filenames, 'r') as file:
+                    tt = file.readline()
+                    #name = filenames[filename]
+                    while tt:
+                        a = tt.split()
+                        if a[1] == 'light':
+                            print('---file name ---', filenames)
+                        # if a[0] == '0':
+                        #     a[0] = 'car'
+                        # elif a[0] == '1':
+                        #     a[0] = 'van'
+                        # elif a[0] == '2':
+                        #     a[0] = 'bus'
+                        # elif a[0] == '3':
+                        #     a[0] = 'medium_truck'
+                        # elif a[0] == '4':
+                        #     a[0] = 'large_truck'
+                        # elif a[0] == '5':
+                        #     a[0] = 'super_truck'
+                        # elif a[0] == '6':
+                        #     a[0] = 'towing_truck'
+                        # elif a[0] == '7':
+                        #     a[0] = 'tractor'
+                        # elif a[0] == '8':
+                        #     a[0] = 'motorbike'
+
+                        # with open(filenames2, 'a') as f:
+                        #     print(filenames2)
+                        #     print(a)
+                        #     f.write(a[0] + ' ' + a[1] + ' ' + a[2] + ' ' + a[3] + ' ' + a[4] + '\n')
+                        tt = file.readline()
+
+        else:
+            eachfile(filenames, filenames2)
+
+if __name__ == '__main__':
+    path3 = "D:\gyz\donglan\car-dataset2/road-label"
+    path4 = "D:\gyz\donglan/car-dataset2/txt"
+    eachfile(path3, path4)
+
