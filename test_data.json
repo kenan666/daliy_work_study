@@ -1,0 +1,38 @@
+{
+    "command": {
+        "type": "detectionResult",
+        "time": "2021-07-05 19:42:16"
+    },
+    "param": {
+        "algo": "FACE",
+        "taskId": "1",
+        "cameraId": "1",
+        "msgLevel": "1",
+        "videoUrl": "ip address",
+        "objList": [
+            {
+                "rect": {
+                    "x": "0.50",
+                    "y": "0.50",
+                    "width": "0.50",
+                    "height": "0.50"
+                },
+                "confidence": "0.9",
+                "content": "0.9",
+                "userID": "1",
+                "resultUrl": [
+                    {
+                        "url": "/Users/kenan/Desktop/meter_reader",
+                        "urlType": "local",
+                        "mediaType": "pic"
+                    },
+                    {
+                        "url": "/Users/kenan/Desktop/meter_reader",
+                        "urlType": "local",
+                        "mediaType": "video"
+                    }
+                ]
+            }
+        ]
+    }
+}
